@@ -60,7 +60,7 @@ if __name__ == "__main__":
     print(cleaned_df.head())
 
     engine = create_engine(
-    "postgresql+psycopg://christophertho1:mypassword@192.168.50.6:5432/netflix"
+    "postgresql+psycopg://christophertho1:mypassword@localhost:5432/netflix"
     )
 
     cleaned_df.to_sql(
