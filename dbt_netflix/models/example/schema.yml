@@ -8,3 +8,18 @@ models:
       - name: title
         tests:
           - not_null
+      - name: director
+      - name: actors
+      - name: country
+      - name: rating
+      - name: duration
+      - name: listed_in
+      - name: description
+      - name: release_year
+      - name: date_added
+  - name: director_summary
+    columns:
+      - name: director
+        tests:
+          - not_null
+      - name: title_count    
