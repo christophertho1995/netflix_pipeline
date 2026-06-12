@@ -57,13 +57,13 @@ def clean_netflix_data(df: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == "__main__":
     raw_df = pull_netflix_data()
-    cleaned_df = clean_netflix_data(raw_df)
-    cleaned_df.to_csv(OUTPUT_FILE, index=False)
+    # cleaned_df = clean_netflix_data(raw_df)
+    # cleaned_df.to_csv(OUTPUT_FILE, index=False)
 
-    print(f"Cleaned {len(cleaned_df):,} Netflix titles and saved them to {OUTPUT_FILE}")
-    print(cleaned_df.head())
+    # print(f"Cleaned {len(cleaned_df):,} Netflix titles and saved them to {OUTPUT_FILE}")
+    # print(cleaned_df.head())
 
-    username = os.getenv('username')
+    username = os.getenv('user')
     password = os.getenv('password')
     port = os.getenv('port')
     db = os.getenv('db')
@@ -72,8 +72,8 @@ if __name__ == "__main__":
     f"postgresql+psycopg://{username}:{password}@localhost:{port}/{db}"
     )
 
-    cleaned_df.to_sql(
-        "netflix_titles_cleaned",
+    raw_df.to_sql(
+        "raw_movies",
         engine,
         if_exists="replace",
         index=False
