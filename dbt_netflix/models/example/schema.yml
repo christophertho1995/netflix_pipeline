@@ -1,0 +1,10 @@
+models:
+  - name: clean_movies
+    columns:
+      - name: show_id
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
