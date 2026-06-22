@@ -1,3 +1,6 @@
+# GET /movies/{id}
+# GET /summary
+
 import pandas as pd
 
 from fastapi import FastAPI
